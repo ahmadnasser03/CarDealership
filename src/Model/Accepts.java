@@ -19,4 +19,5 @@ public class Accepts {
         this.SP_SSN = SP.getSP_SSN();
         this.Option = pm.getOption();
     }
+    //test
 }

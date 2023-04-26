@@ -10,8 +10,8 @@ package Model;
  */
 public class Accepts {
     
-    int SP_SSN;
-    String Option;
+    private int SP_SSN;
+    private String Option;
     
     public Accepts(){}
     

@@ -22,7 +22,7 @@ public class Customers {
         this.C_FirstName= C_FirstName;
         this.C_LastName=C_LastName;
         this.C_PhoneNumber=C_PhoneNumber;
-        this.C_SSN=C_SSN;
+        this.C_Email = C_Email;
     
     
     }

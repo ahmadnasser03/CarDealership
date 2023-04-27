@@ -12,7 +12,7 @@ public class Accepts {
     
     private int SP_SSN;
     private String Option;
-    
+    //hi
     public Accepts(){}
     
     public Accepts(SalesPerson SP, PaymentMethod pm){

@@ -30,7 +30,7 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         AddCustomer = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        AddSalesPerson = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +59,12 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Add New Sales Person");
+        AddSalesPerson.setText("Add New Sales Person");
+        AddSalesPerson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddSalesPersonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,7 +91,7 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(AddCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(40, 40, 40)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)))
+                                .addComponent(AddSalesPerson, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -102,7 +107,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AddCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(AddSalesPerson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(40, 40, 40))
         );
 
@@ -114,13 +119,19 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_CustomerBActionPerformed
 
     private void SalesPersonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesPersonBActionPerformed
-        // TODO add your handling code here:
+        SalesPersonLog SPL = new SalesPersonLog();
+        SPL.setVisible(true);
     }//GEN-LAST:event_SalesPersonBActionPerformed
 
     private void AddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCustomerActionPerformed
         AddCustomer AD = new AddCustomer();
         AD.setVisible(true);
     }//GEN-LAST:event_AddCustomerActionPerformed
+
+    private void AddSalesPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSalesPersonActionPerformed
+        AddSalesPerson SP = new AddSalesPerson();
+        SP.setVisible(true);
+    }//GEN-LAST:event_AddSalesPersonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,9 +170,9 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddCustomer;
+    private javax.swing.JButton AddSalesPerson;
     private javax.swing.JButton CustomerB;
     private javax.swing.JButton SalesPersonB;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

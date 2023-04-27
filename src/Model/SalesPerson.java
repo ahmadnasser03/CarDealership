@@ -9,12 +9,12 @@ package Model;
  * @author lara.tawbeh
  */
 public class SalesPerson {
-    private int SP_SSN, SP_PhoneNumber;
-    private String SP_FirstName, SP_LastName, SP_Email, YearsOfExperience;
+    private int SP_SSN, SP_PhoneNumber, YearsOfExperience;
+    private String SP_FirstName, SP_LastName, SP_Email;
     
     public SalesPerson(){}
     
-    public SalesPerson(int SP_SSN, int SP_PhoneNumber, String SP_FirstName, String SP_LastName, String SP_Email, String YearsOfExperience) {
+    public SalesPerson(int SP_SSN,  String SP_FirstName, String SP_LastName,int SP_PhoneNumber, String SP_Email, int YearsOfExperience) {
         this.SP_SSN = SP_SSN;
         this.SP_PhoneNumber = SP_PhoneNumber;
         this.SP_FirstName = SP_FirstName;
@@ -64,11 +64,11 @@ public class SalesPerson {
         this.SP_Email = SP_Email;
     }
 
-    public String getYearsOfExperience() {
+    public int getYearsOfExperience() {
         return YearsOfExperience;
     }
 
-    public void setYearsOfExperience(String YearsOfExperience) {
+    public void setYearsOfExperience(int YearsOfExperience) {
         this.YearsOfExperience = YearsOfExperience;
     }
 }

@@ -85,7 +85,12 @@ public class Order {
     public void setC_SSN(int C_SSN) {
         this.C_SSN = C_SSN;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" + "OrderID=" + OrderID + ", OrderDate=" + OrderDate + ", VehicleNumber=" + VehicleNumber + ", CommisionRate=" + CommisionRate + ", SP_SSN=" + SP_SSN + ", Option=" + Option + ", C_SSN=" + C_SSN + '}';
+    }
     
-    
+   
     
 }

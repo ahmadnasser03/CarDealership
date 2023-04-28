@@ -35,7 +35,7 @@ public class OrderControl extends AbstractControl {
     public Order getOrderByID(int id) {
 
         Order order = null;
-        String query = String.format("SELECT * FROM orders WHERE OrderID = %d", id);
+        String query = String.format("SELECT * FROM order WHERE OrderID = %d", id);
         try {
             ResultSet rs = con.createStatement().executeQuery(query);
             Cars car = carCtrl.getCarByVehicleNumber(rs.getInt("VehicleNumber"));
@@ -47,7 +47,7 @@ public class OrderControl extends AbstractControl {
             order = new Order(rs.getInt("OrderID"),
                     rs.getString("OrderDate"),
                     car,
-                    rs.getInt("CommissionRate"),
+                    rs.getInt("CommisionRate"),
                     SP,
                     pm,
                     C);
@@ -81,9 +81,12 @@ public class OrderControl extends AbstractControl {
     public List<Order> getAllOrders() {
 
         List<Order> orders = new ArrayList<>();
+        System.out.println("control.OrderControl.getAllOrders()");
         try {
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM orders");
-            while (rs.next()) {
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM `order`");
+            while(rs.next()){
+            System.out.println("control.OrderControl.getAllOrders()");
+                System.out.println("control.OrderControl.getAllOrders()");
                 Cars car = carCtrl.getCarByVehicleNumber(rs.getInt("VehicleNumber"));
                 SalesPerson SP = SPC.getSalesPersonBySSN(rs.getInt("SP_SSN"));
                 Customers C = customerCtrl.getCustomerBySSN(rs.getInt("C_SSN"));
@@ -91,13 +94,15 @@ public class OrderControl extends AbstractControl {
                 Order order = new Order(rs.getInt("OrderID"),
                         rs.getString("OrderDate"),
                         car,
-                        rs.getInt("CommissionRate"),
+                        rs.getInt("CommisionRate"),
                         SP,
                         pm,
                         C);
                 orders.add(order);
             }
-        } catch (Exception e){}
+            
+        } catch (Exception e){
+        e.printStackTrace();}
         
         return orders;
     }

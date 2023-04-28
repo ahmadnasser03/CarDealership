@@ -22,11 +22,13 @@ public class PaymentMethodControl extends AbstractControl {
         
         try {
             
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM paymentmethod WHERE option = " + option);
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM paymentmethod WHERE Option = '" + option+"'");
             rs.next();
-            pm = new PaymentMethod(rs.getString("option"));
+            pm = new PaymentMethod(rs.getString("Option"));
             
-        } catch(Exception e){}
+        } catch(Exception e){
+        e.printStackTrace();
+        }
         
         return pm;
     }

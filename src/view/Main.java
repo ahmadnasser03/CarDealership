@@ -33,6 +33,7 @@ public class Main extends javax.swing.JFrame {
         AddSalesPerson = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 51, 51));
 
         SalesPersonB.setText("Sales Person");
         SalesPersonB.addActionListener(new java.awt.event.ActionListener() {

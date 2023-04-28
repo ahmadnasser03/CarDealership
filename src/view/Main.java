@@ -115,7 +115,8 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CustomerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerBActionPerformed
-        
+        CustomerLog CL = new CustomerLog();
+        CL.setVisible(true);
     }//GEN-LAST:event_CustomerBActionPerformed
 
     private void SalesPersonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesPersonBActionPerformed

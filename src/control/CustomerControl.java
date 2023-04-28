@@ -38,5 +38,24 @@ public class CustomerControl extends AbstractControl {
         }
         return rows == 1;
     }
+    
+    public Customers getCustomerBySSN(int ssn){
+        
+        Customers customer = null;
+        String query = String.format("SELECT * FROM customers WHERE C_SSN = %d",ssn);
+        try {
+            ResultSet rs = con.createStatement().executeQuery(query);
+            rs.next();
+            customer = new Customers(rs.getInt("C_SSN"),
+            rs.getString("C_FirstName"),
+            rs.getString("C_LastName"),
+            rs.getInt("C_PhoneNumber"),
+            rs.getString("C_Email"));
+            
+            
+        } catch (Exception e){}
+        
+        return customer;
+    }
 
 }

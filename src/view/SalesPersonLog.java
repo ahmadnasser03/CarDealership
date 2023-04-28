@@ -66,7 +66,9 @@ public class SalesPersonLog extends javax.swing.JFrame {
             }
         });
 
-        log.setText("Log In");
+        doesNotExist.setForeground(new java.awt.Color(255, 51, 51));
+
+        log.setText("Login");
         log.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logActionPerformed(evt);

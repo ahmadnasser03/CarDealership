@@ -1,5 +1,2 @@
-*
-!.gitignore
-!/
-!*/
-!*.java # replace with the file extensions you want to include
+/build
+/dist

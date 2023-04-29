@@ -6,6 +6,8 @@ package control;
 
 import Model.Cars;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -31,5 +33,25 @@ public class CarControl extends AbstractControl {
         } catch(Exception e){}
         
         return car;
+    }
+    
+    public List<Cars> getAllCars(){
+        
+        List<Cars> cars = new ArrayList<>();
+        try {
+            
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM car");
+            while (rs.next()){
+                Cars car = new Cars(rs.getString("VehicleNumber"),
+            rs.getString("Model"),
+            rs.getString("Make"),
+            rs.getInt("Year"),
+            rs.getInt("Price"));
+                cars.add(car);
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return cars;
     }
 }

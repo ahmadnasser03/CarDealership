@@ -7,6 +7,8 @@ package control;
 import Model.Customers;
 import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,7 +16,6 @@ import java.sql.*;
  */
 public class CustomerControl extends AbstractControl {
 
-    
     public CustomerControl() {
         super();
     }
@@ -29,33 +30,52 @@ public class CustomerControl extends AbstractControl {
             ps.setString(5, customer.getC_LastName());
             ps.setInt(3, customer.getC_PhoneNumber());
             ps.setString(2, customer.getC_Email());
-            
+
             rows = ps.executeUpdate();
-            
+
             System.out.println(rows + " rows affected");
-        } catch(Exception e){
-            
+        } catch (Exception e) {
+
         }
         return rows == 1;
     }
-    
-    public Customers getCustomerBySSN(int ssn){
-        
+
+    public Customers getCustomerBySSN(int ssn) {
+
         Customers customer = null;
-        String query = String.format("SELECT * FROM customers WHERE C_SSN = %d",ssn);
+        String query = String.format("SELECT * FROM customers WHERE C_SSN = %d", ssn);
         try {
             ResultSet rs = con.createStatement().executeQuery(query);
             rs.next();
             customer = new Customers(rs.getInt("C_SSN"),
-            rs.getString("C_FirstName"),
-            rs.getString("C_LastName"),
-            rs.getInt("C_PhoneNumber"),
-            rs.getString("C_Email"));
-            
-            
-        } catch (Exception e){}
-        
+                    rs.getString("C_FirstName"),
+                    rs.getString("C_LastName"),
+                    rs.getInt("C_PhoneNumber"),
+                    rs.getString("C_Email"));
+
+        } catch (Exception e) {
+        }
+
         return customer;
+    }
+
+    public List<Customers> getAllCustomers() {
+
+        List<Customers> customers = new ArrayList<>();
+        try {
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM customer");
+            while (rs.next()) {
+                Customers customer = new Customers(rs.getInt("C_SSN"),
+                        rs.getString("C_FirstName"),
+                        rs.getString("C_LastName"),
+                        rs.getInt("C_PhoneNumber"),
+                        rs.getString("C_Email"));
+                customers.add(customer);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return customers;
     }
 
 }

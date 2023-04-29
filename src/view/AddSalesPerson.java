@@ -48,8 +48,7 @@ public class AddSalesPerson extends javax.swing.JFrame {
         email = new javax.swing.JTextField();
         phoneNumber = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(605, 415));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jLabel1.setText("Add Sales Person");

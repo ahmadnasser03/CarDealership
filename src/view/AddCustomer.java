@@ -48,7 +48,7 @@ public class AddCustomer extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         alreadyExists = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jLabel1.setText("Add Customer:");

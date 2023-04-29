@@ -5,10 +5,10 @@
         <group>
             <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/SalesPerson.java</file>
             <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/control/SalesPersonControl.java</file>
+            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/BrowseCustomers.java</file>
             <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/control/AbstractControl.java</file>
             <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/AsSalesPerson.java</file>
             <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/Offers.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/control/PaymentMethodControl.java</file>
             <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/.gitignore</file>
             <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/control/CarControl.java</file>
             <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/CustomerLog.java</file>

@@ -63,7 +63,7 @@ public class CustomerControl extends AbstractControl {
 
         List<Customers> customers = new ArrayList<>();
         try {
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM customer");
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM customers");
             while (rs.next()) {
                 Customers customer = new Customers(rs.getInt("C_SSN"),
                         rs.getString("C_FirstName"),
@@ -77,5 +77,4 @@ public class CustomerControl extends AbstractControl {
         }
         return customers;
     }
-
 }

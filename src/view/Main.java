@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+
 /**
  *
  * @author lara.tawbeh
@@ -33,6 +34,7 @@ public class Main extends javax.swing.JFrame {
         AddSalesPerson = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 51, 51));
 
         SalesPersonB.setText("Sales Person");
         SalesPersonB.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +117,8 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CustomerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerBActionPerformed
-        
+        CustomerLog CL = new CustomerLog();
+        CL.setVisible(true);
     }//GEN-LAST:event_CustomerBActionPerformed
 
     private void SalesPersonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesPersonBActionPerformed

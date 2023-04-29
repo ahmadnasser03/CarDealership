@@ -12,6 +12,7 @@ import java.sql.*;
  */
 public abstract class AbstractControl {
 
+
     private String url = "jdbc:mysql://localhost:3306/CarDealership",
             user = "root",
             pass = "";

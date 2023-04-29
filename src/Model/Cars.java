@@ -12,17 +12,25 @@ public class Cars {
     private String VehicleNumber;
     private String Model;
     private String Make;
-    private int Year;
+    private int Year, Price;
     
    public Cars(){}
    
-   public Cars(String VehicleNumber, String Model, String Make, int Year ){
+   public Cars(String VehicleNumber, String Model, String Make, int Year, int Price ){
        this.VehicleNumber= VehicleNumber;
        this.Model= Model;
        this.Make= Make;
        this.Year= Year;
-        
+       this.Price = Price;
    }
+
+    public int getPrice() {
+        return Price;
+    }
+
+    public void setPrice(int Price) {
+        this.Price = Price;
+    }
 
     public String getVehicleNumber() {
         return VehicleNumber;

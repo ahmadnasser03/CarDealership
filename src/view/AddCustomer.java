@@ -5,7 +5,6 @@
 package view;
 
 import Model.Customers;
-import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import control.CustomerControl;
 
 /**

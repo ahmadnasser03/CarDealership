@@ -144,12 +144,13 @@ public class AsSalesPerson extends JFrame{
     }//GEN-LAST:event_browseCustomersActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-               dispose();
+        dispose();
         Main main = new Main();
         main.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void UpdateInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateInfoActionPerformed
+        this.setVisible(false);
         UpdateMyInfo up= new UpdateMyInfo(SP);
         up.setVisible(true);
     }//GEN-LAST:event_UpdateInfoActionPerformed

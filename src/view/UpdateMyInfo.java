@@ -206,6 +206,8 @@ SalesPerson sp;
                 this.sp.setYearsOfExperience(Integer.parseInt(this.yearOfExp.getText()));
                 this.setVisible(false);
                 SPCtrl.S_UpdateMyInfo(sp);
+                ChangesSaved CS = new ChangesSaved(sp);
+                CS.setVisible(true);
        
     }//GEN-LAST:event_SubmitActionPerformed
 

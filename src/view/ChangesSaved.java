@@ -36,11 +36,14 @@ public class ChangesSaved extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(107, 5, 107));
         jLabel1.setText("Changes Saved Successfully.");
 
+        jButton1.setBackground(new java.awt.Color(107, 5, 107));
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Done");
-        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jButton1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

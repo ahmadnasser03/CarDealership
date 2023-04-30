@@ -5,7 +5,6 @@
 package control;
 
 import Model.Customers;
-import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,4 +76,21 @@ public class CustomerControl extends AbstractControl {
         }
         return customers;
     }
+     public void C_UpdateMyInfo(Customers C){
+    
+        System.out.println(C.getC_SSN());
+String query = String.format("UPDATE Customers SET C_FirstName = '%s', C_LastName = '%s', C_PhoneNumber = %d, C_Email = '%s'"
+        + " WHERE C_SSN = %d",
+        C.getC_FirstName(), C.getC_LastName(), C.getC_PhoneNumber(), C.getC_Email(), 
+        C.getC_SSN());      System.out.println(query);
+        try{
+       Statement stm= con.createStatement();
+         stm.executeUpdate(query);
+         stm.close();
+        }
+        catch (SQLException ex){
+        ex.printStackTrace();
+     }
+    }
+    
 }

@@ -114,7 +114,8 @@ public class AsCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void UpdateInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateInfoActionPerformed
-        // TODO add your handling code here:
+         UpdateCustomer up= new UpdateCustomer(customer);
+        up.setVisible(true);
     }//GEN-LAST:event_UpdateInfoActionPerformed
 
     private void BrowseSPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrowseSPActionPerformed

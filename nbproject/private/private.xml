@@ -3,29 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/SalesPerson.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/control/SalesPersonControl.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/BrowseCustomers.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/control/AbstractControl.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/AsSalesPerson.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/Offers.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/.gitignore</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/control/CarControl.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/CustomerLog.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/AsCustomer.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/Accepts.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/Wants.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/control/OrderControl.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/Customers.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/control/CustomerControl.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/Prefers.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/Main.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/PaymentMethod.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/Cars.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/SalesPersonLog.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/AddCustomer.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/Model/Order.java</file>
-            <file>file:/Users/ahmadnasser/Documents/GitHub/CarDealership/src/view/AddSalesPerson.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/view/AsSalesPerson.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/control/AbstractControl.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/Model/Accepts.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/view/SalesPersonLog.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/view/AddSalesPerson.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/control/CarControl.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/view/AddCustomer.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/control/CustomerControl.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/view/CustomerLog.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/view/Main.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/view/AsCustomer.java</file>
+            <file>file:/C:/Users/lara.tawbeh/Documents/GitHub/CarDealership/src/view/BrowseCustomers.java</file>
         </group>
     </open-files>
 </project-private>

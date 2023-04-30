@@ -138,7 +138,7 @@ public class AsSalesPerson extends JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void browseCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseCustomersActionPerformed
-        dispose();
+        //dispose();
         BrowseCustomers BC = new BrowseCustomers(this.CC.getAllCustomers());
         BC.setVisible(true);
     }//GEN-LAST:event_browseCustomersActionPerformed
@@ -150,9 +150,15 @@ public class AsSalesPerson extends JFrame{
     }//GEN-LAST:event_backActionPerformed
 
     private void UpdateInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateInfoActionPerformed
-        // TODO add your handling code here:
+        UpdateMyInfo up= new UpdateMyInfo(SP);
+        up.setVisible(true);
     }//GEN-LAST:event_UpdateInfoActionPerformed
+public void S_UpdateMyInfo(java.awt.event.ActionEvent evt){
 
+}
+public void DeleteMyAccount(java.awt.event.ActionEvent evt){
+
+}
     /**
      * @param args the command line arguments
      */

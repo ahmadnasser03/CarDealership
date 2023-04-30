@@ -39,6 +39,7 @@ public class SalesPersonLog extends javax.swing.JFrame {
         ssn = new javax.swing.JTextField();
         doesNotExist = new javax.swing.JLabel();
         log = new javax.swing.JButton();
+        back = new javax.swing.JButton();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -75,6 +76,13 @@ public class SalesPersonLog extends javax.swing.JFrame {
             }
         });
 
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,6 +99,10 @@ public class SalesPersonLog extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(log)
                         .addGap(153, 153, 153))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(back)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +115,9 @@ public class SalesPersonLog extends javax.swing.JFrame {
                 .addComponent(log)
                 .addGap(20, 20, 20)
                 .addComponent(doesNotExist, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(back)
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -130,6 +144,12 @@ public class SalesPersonLog extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_logActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+       dispose();
+        Main main = new Main();
+        main.setVisible(true);
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +187,7 @@ public class SalesPersonLog extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JLabel doesNotExist;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;

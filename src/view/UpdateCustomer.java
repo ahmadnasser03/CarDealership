@@ -4,17 +4,32 @@
  */
 package view;
 
+import Model.Customers;
+import control.CustomerControl;
+
 /**
  *
- * @author ThinkPad1
+ * @author tala
  */
 public class UpdateCustomer extends javax.swing.JFrame {
-
+ CustomerControl CCtrl=new CustomerControl();
+ Customers c;
     /**
      * Creates new form UpdateMyInfo
      */
-    public UpdateCustomer() {
+    public UpdateCustomer(Customers c) {
+       
+        this.c=c;
         initComponents();
+        this.FirstName.setText(c.getC_FirstName());
+        this.Lastname.setText(c.getC_LastName());
+        this.Phonenumber.setText(""+c.getC_PhoneNumber());
+        this.email.setText(c.getC_Email());
+      
+    }
+
+    private UpdateCustomer() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -31,12 +46,13 @@ public class UpdateCustomer extends javax.swing.JFrame {
         Email = new javax.swing.JButton();
         LastName = new javax.swing.JButton();
         PhoneNumber = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        Lastname = new javax.swing.JTextField();
+        FirstName = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
+        Phonenumber = new javax.swing.JTextField();
         Back = new javax.swing.JButton();
         submit = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,9 +76,15 @@ public class UpdateCustomer extends javax.swing.JFrame {
 
         PhoneNumber.setText("Phone Number:");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        Lastname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                LastnameActionPerformed(evt);
+            }
+        });
+
+        FirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FirstNameActionPerformed(evt);
             }
         });
 
@@ -80,6 +102,8 @@ public class UpdateCustomer extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,19 +115,21 @@ public class UpdateCustomer extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                        .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                         .addComponent(Firstname, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(FirstName, javax.swing.GroupLayout.Alignment.LEADING))
                     .addComponent(Email)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PhoneNumber)
                     .addComponent(LastName)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Phonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
         );
@@ -121,19 +147,21 @@ public class UpdateCustomer extends javax.swing.JFrame {
                             .addComponent(LastName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Lastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(PhoneNumber)
                             .addComponent(Email))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Phonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -147,9 +175,9 @@ public class UpdateCustomer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LastNameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void LastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_LastnameActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
          dispose();
@@ -158,15 +186,17 @@ public class UpdateCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_BackActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-         
-                this.Firstname.getText();
-                this.LastName.getText();
-                Integer.parseInt(this.PhoneNumber.getText());
-                this.Email.getText();
-            this.setVisible(false);
-        
-
+        this.c.setC_FirstName(FirstName.getText());
+        this.c.setC_LastName(Lastname.getText());
+        this.c.setC_PhoneNumber(Integer.parseInt(this.Phonenumber.getText()));
+        this.c.setC_Email(email.getText());
+        this.setVisible(false);
+        CCtrl.C_UpdateMyInfo(c);
     }//GEN-LAST:event_submitActionPerformed
+
+    private void FirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FirstNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,14 +237,15 @@ public class UpdateCustomer extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JButton Email;
+    private javax.swing.JTextField FirstName;
     private javax.swing.JButton Firstname;
     private javax.swing.JButton LastName;
+    private javax.swing.JTextField Lastname;
     private javax.swing.JButton PhoneNumber;
+    private javax.swing.JTextField Phonenumber;
     private javax.swing.JButton UpdatedInfo;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField email;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }

@@ -109,27 +109,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete My Account"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="back">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Back"/>
-      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteAccountActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="UpdateInfo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Update My Info"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateInfoActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="DeleteAccount">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Delete My Account"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

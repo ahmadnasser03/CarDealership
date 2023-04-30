@@ -76,19 +76,21 @@ public class CustomerControl extends AbstractControl {
         }
         return customers;
     }
-     public void C_UpdateMyInfo(Customers C)
-    {
-        
-       String query="UPDATE customers SET C_FirstName='"+C.getC_FirstName()+"', C_LastName ='"+C.getC_LastName()+"',C_PhoneNumber='"+C.getC_PhoneNumber()+"', C_Email='"+C.getC_Email()+"' WHERE C_SSN='"+C.getC_SSN()+"'";
+     public void C_UpdateMyInfo(Customers C){
+    
+        System.out.println(C.getC_SSN());
+String query = String.format("UPDATE Customers SET C_FirstName = '%s', C_LastName = '%s', C_PhoneNumber = %d, C_Email = '%s'"
+        + " WHERE C_SSN = %d",
+        C.getC_FirstName(), C.getC_LastName(), C.getC_PhoneNumber(), C.getC_Email(), 
+        C.getC_SSN());      System.out.println(query);
         try{
-          
-        Statement statement = con.createStatement();
-        statement.executeUpdate(query);
-        
+       Statement stm= con.createStatement();
+         stm.executeUpdate(query);
+         stm.close();
         }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
+        catch (SQLException ex){
+        ex.printStackTrace();
+     }
     }
     
 }

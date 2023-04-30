@@ -118,7 +118,7 @@ public class CustomerLog extends javax.swing.JFrame {
                 this.setVisible(false);
             } else {
                 
-                this.doesNotExist.setText("Sales person does not exist.");
+                this.doesNotExist.setText("Customer does not exist.");
             }
         }
     }//GEN-LAST:event_logActionPerformed

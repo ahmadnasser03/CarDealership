@@ -5,6 +5,7 @@
 package view;
 
 import Model.Customers;
+import control.SalesPersonControl;
 
 /**
  *
@@ -13,6 +14,7 @@ import Model.Customers;
 public class AsCustomer extends javax.swing.JFrame {
 
     private Customers customer;
+    private SalesPersonControl SPC;
     /**
      * Creates new form AsCustomer
      */
@@ -21,6 +23,7 @@ public class AsCustomer extends javax.swing.JFrame {
         initComponents();
         customer = c;
         this.message.setText("Welcome " +  customer.getC_FirstName() + "!");
+        SPC = new SalesPersonControl();
     }
 
     /**
@@ -49,6 +52,11 @@ public class AsCustomer extends javax.swing.JFrame {
         });
 
         BrowseSP.setText("Browse Sales People");
+        BrowseSP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrowseSPActionPerformed(evt);
+            }
+        });
 
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +119,10 @@ public class AsCustomer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BrowseCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrowseCActionPerformed
-        // TODO add your handling code here:
+
+        BrowseCars BC = new BrowseCars(customer);
+        BC.setVisible(true);
+
     }//GEN-LAST:event_BrowseCActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -123,6 +134,11 @@ public class AsCustomer extends javax.swing.JFrame {
     private void UpdateInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateInfoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UpdateInfoActionPerformed
+
+    private void BrowseSPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrowseSPActionPerformed
+           BrowseSalesPerson BSP = new BrowseSalesPerson (this.SPC.getAllSalesPeople());
+          BSP.setVisible(true);
+    }//GEN-LAST:event_BrowseSPActionPerformed
 
     /**
      * @param args the command line arguments

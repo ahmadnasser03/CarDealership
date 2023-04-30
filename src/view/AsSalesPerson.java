@@ -138,7 +138,7 @@ public class AsSalesPerson extends JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void browseCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseCustomersActionPerformed
-        dispose();
+        //dispose();
         BrowseCustomers BC = new BrowseCustomers(this.CC.getAllCustomers());
         BC.setVisible(true);
     }//GEN-LAST:event_browseCustomersActionPerformed

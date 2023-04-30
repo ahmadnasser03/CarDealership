@@ -44,9 +44,11 @@ public class BrowseSalesPerson extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 225));
+        jLabel1.setForeground(new java.awt.Color(107, 5, 107));
         jLabel1.setText("Sales People");
 
+        jTable1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(107, 5, 107));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

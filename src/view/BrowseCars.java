@@ -126,14 +126,14 @@ public class BrowseCars extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Vehicle Number", "Model", "Make", "Year", "Price", "Interested"
+                "Vehicle Number", "Model", "Make", "Year", "Price"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -146,9 +146,6 @@ public class BrowseCars extends javax.swing.JFrame {
         });
         table.setRowHeight(50);
         jScrollPane1.setViewportView(table);
-        if (table.getColumnModel().getColumnCount() > 0) {
-            table.getColumnModel().getColumn(5).setPreferredWidth(10);
-        }
 
         selectModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select Model--" }));
         selectModel.addActionListener(new java.awt.event.ActionListener() {

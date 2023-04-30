@@ -63,6 +63,11 @@ public class Cars {
     public void setYear(int Year) {
         this.Year = Year;
     }
+
+    @Override
+    public String toString() {
+        return "Cars{" + "VehicleNumber=" + VehicleNumber + ", Model=" + Model + ", Make=" + Make + ", Year=" + Year + ", Price=" + Price + '}';
+    }
 }
     
 

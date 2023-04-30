@@ -119,7 +119,10 @@ public class AsCustomer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BrowseCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrowseCActionPerformed
-       
+
+        BrowseCars BC = new BrowseCars(customer);
+        BC.setVisible(true);
+
     }//GEN-LAST:event_BrowseCActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed

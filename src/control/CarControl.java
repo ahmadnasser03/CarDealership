@@ -40,7 +40,7 @@ public class CarControl extends AbstractControl {
         List<Cars> cars = new ArrayList<>();
         try {
             
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM car");
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM cars");
             while (rs.next()){
                 Cars car = new Cars(rs.getString("VehicleNumber"),
             rs.getString("Model"),
@@ -53,5 +53,78 @@ public class CarControl extends AbstractControl {
             e.printStackTrace();
         }
         return cars;
+    }
+    
+    public List<Cars> getAllCarsWithMake(String make){
+        
+        if (make.equals(""))
+            return getAllCars();
+        List<Cars> cars = new ArrayList<>();
+        try {
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM cars WHERE make='" + make + "'");
+            while(rs.next()){
+                Cars car = new Cars(rs.getString("VehicleNumber"),
+            rs.getString("Model"),
+            rs.getString("Make"),
+            rs.getInt("Year"),
+            rs.getInt("Price"));
+                cars.add(car);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        
+        return cars;
+    }
+    
+    public List<Cars> getAllCarsWithModel(String model){
+        
+        if (model.equals(""))
+            return getAllCars();
+        List<Cars> cars = new ArrayList<>();
+        try {
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM cars WHERE model='" + model + "'");
+            while(rs.next()){
+                Cars car = new Cars(rs.getString("VehicleNumber"),
+            rs.getString("Model"),
+            rs.getString("Make"),
+            rs.getInt("Year"),
+            rs.getInt("Price"));
+                cars.add(car);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        } 
+        return cars;
+    }
+    
+    public List<String> getAllModels(){
+        
+        List<String> models = new ArrayList<>();
+        try {
+           ResultSet rs = con.createStatement().executeQuery("SELECT DISTINCT Model FROM cars" );
+           while (rs.next()){
+               models.add(rs.getString("Model"));
+           }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return models;
+    }
+    
+    public List<String> getAllMakes(){
+        
+        List<String> makes = new ArrayList<>();
+        try {
+           ResultSet rs = con.createStatement().executeQuery("SELECT DISTINCT Make FROM cars" );
+           while (rs.next()){
+               makes.add(rs.getString("Make"));
+           }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return makes;
     }
 }

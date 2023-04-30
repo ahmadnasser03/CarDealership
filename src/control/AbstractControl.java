@@ -12,8 +12,8 @@ import java.sql.*;
  */
 public abstract class AbstractControl {
 
-    private String url = "jdbc:mysql://192.168.1.5:3308/cardealership?useSSL=false",
-            user = "dbms",
+    private String url = "jdbc:mysql://localhost:3306/cardealership?useSSL=false",
+            user = "root",
             pass = "";
     protected Connection con;
 

@@ -113,14 +113,14 @@ public class BrowseCars extends javax.swing.JFrame {
         jRadioButtonMenuItem2.setSelected(true);
         jRadioButtonMenuItem2.setText("jRadioButtonMenuItem2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Lao MN", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(107, 5, 107));
         jLabel1.setText("Available Cars");
 
-        table.setFont(new java.awt.Font("Lao MN", 0, 13)); // NOI18N
-        table.setForeground(new java.awt.Color(51, 102, 255));
+        table.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
+        table.setForeground(new java.awt.Color(107, 5, 107));
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

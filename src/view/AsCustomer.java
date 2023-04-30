@@ -41,79 +41,61 @@ public class AsCustomer extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         UpdateInfo = new javax.swing.JButton();
         DeleteAccount = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        message.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 29, 158, 41));
+
+        BrowseC.setBackground(new java.awt.Color(107, 5, 107));
+        BrowseC.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         BrowseC.setText("Browse Cars");
         BrowseC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BrowseCActionPerformed(evt);
             }
         });
+        getContentPane().add(BrowseC, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 117, 154, 56));
 
+        BrowseSP.setBackground(new java.awt.Color(107, 5, 107));
+        BrowseSP.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         BrowseSP.setText("Browse Sales People");
         BrowseSP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BrowseSPActionPerformed(evt);
             }
         });
+        getContentPane().add(BrowseSP, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 117, -1, 56));
 
+        back.setBackground(new java.awt.Color(107, 5, 107));
+        back.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 254, -1, -1));
 
+        UpdateInfo.setBackground(new java.awt.Color(107, 5, 107));
+        UpdateInfo.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         UpdateInfo.setText("Update My Info");
         UpdateInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateInfoActionPerformed(evt);
             }
         });
+        getContentPane().add(UpdateInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(126, 254, -1, -1));
 
+        DeleteAccount.setBackground(new java.awt.Color(107, 5, 107));
+        DeleteAccount.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         DeleteAccount.setText("Delete My Account");
+        getContentPane().add(DeleteAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 254, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(back)
-                        .addGap(26, 26, 26)
-                        .addComponent(UpdateInfo)
-                        .addGap(18, 18, 18)
-                        .addComponent(DeleteAccount)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(BrowseSP)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BrowseC, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BrowseSP, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BrowseC, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(back)
-                    .addComponent(UpdateInfo)
-                    .addComponent(DeleteAccount))
-                .addGap(24, 24, 24))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/car.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -181,6 +163,7 @@ public class AsCustomer extends javax.swing.JFrame {
     private javax.swing.JButton DeleteAccount;
     private javax.swing.JButton UpdateInfo;
     private javax.swing.JButton back;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel message;
     // End of variables declaration//GEN-END:variables
 }

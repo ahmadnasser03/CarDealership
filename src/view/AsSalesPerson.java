@@ -44,6 +44,7 @@ public class AsSalesPerson extends JFrame{
         UpdateInfo = new javax.swing.JButton();
         back = new javax.swing.JButton();
         DeleteAccount = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -75,64 +76,48 @@ public class AsSalesPerson extends JFrame{
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        message.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 176, 22));
+
+        browseCustomers.setBackground(new java.awt.Color(107, 5, 107));
+        browseCustomers.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         browseCustomers.setText("Browse Customers");
         browseCustomers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 browseCustomersActionPerformed(evt);
             }
         });
+        getContentPane().add(browseCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 145, 43));
 
+        UpdateInfo.setBackground(new java.awt.Color(107, 5, 107));
+        UpdateInfo.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         UpdateInfo.setText("Update My Info");
         UpdateInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateInfoActionPerformed(evt);
             }
         });
+        getContentPane().add(UpdateInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 145, 42));
 
+        back.setBackground(new java.awt.Color(107, 5, 107));
+        back.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
+        DeleteAccount.setBackground(new java.awt.Color(107, 5, 107));
+        DeleteAccount.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         DeleteAccount.setText("Delete My Account");
+        getContentPane().add(DeleteAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 145, 43));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(back)
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(browseCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(UpdateInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(DeleteAccount, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(browseCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(UpdateInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(DeleteAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(back)
-                .addGap(17, 17, 17))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/car.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -202,6 +187,7 @@ public void DeleteMyAccount(java.awt.event.ActionEvent evt){
     private javax.swing.JButton browseCustomers;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel message;

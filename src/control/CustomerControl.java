@@ -92,5 +92,17 @@ String query = String.format("UPDATE Customers SET C_FirstName = '%s', C_LastNam
         ex.printStackTrace();
      }
     }
+      public void deleteCustomer(Customers C)
+    {
+        String query="DELETE FROM Customers where C_ssn="+ C.getC_SSN();
+        try{
+       Statement stm= con.createStatement();
+         stm.executeUpdate(query);
+         stm.close();
+        }
+        catch (SQLException ex){
+        ex.printStackTrace();
+     }
+    }
     
 }

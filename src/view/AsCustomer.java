@@ -92,6 +92,11 @@ public class AsCustomer extends javax.swing.JFrame {
         DeleteAccount.setBackground(new java.awt.Color(107, 5, 107));
         DeleteAccount.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         DeleteAccount.setText("Delete My Account");
+        DeleteAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAccountActionPerformed(evt);
+            }
+        });
         getContentPane().add(DeleteAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 254, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/car.jpg"))); // NOI18N
@@ -122,6 +127,11 @@ public class AsCustomer extends javax.swing.JFrame {
            BrowseSalesPerson BSP = new BrowseSalesPerson (this.SPC.getAllSalesPeople());
           BSP.setVisible(true);
     }//GEN-LAST:event_BrowseSPActionPerformed
+
+    private void DeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountActionPerformed
+        CDeleteMyAccount del= new CDeleteMyAccount(customer);
+        del.setVisible(true);
+    }//GEN-LAST:event_DeleteAccountActionPerformed
 
     /**
      * @param args the command line arguments

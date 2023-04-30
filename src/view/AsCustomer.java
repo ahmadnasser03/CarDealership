@@ -49,6 +49,11 @@ public class AsCustomer extends javax.swing.JFrame {
         });
 
         BrowseSP.setText("Browse Sales People");
+        BrowseSP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrowseSPActionPerformed(evt);
+            }
+        });
 
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +70,11 @@ public class AsCustomer extends javax.swing.JFrame {
         });
 
         DeleteAccount.setText("Delete My Account");
+        DeleteAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAccountActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,6 +133,17 @@ public class AsCustomer extends javax.swing.JFrame {
     private void UpdateInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateInfoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UpdateInfoActionPerformed
+
+    private void DeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteAccountActionPerformed
+
+    private void BrowseSPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrowseSPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BrowseSPActionPerformed
+   private void C_UpdateMyInfo(java.awt.event.ActionEvent evt) {
+   
+}
 
     /**
      * @param args the command line arguments

@@ -85,6 +85,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Browse Sales People"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BrowseSPActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="back">
       <Properties>
@@ -106,6 +109,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete My Account"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteAccountActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -5,6 +5,8 @@
 package control;
 
 import Model.SalesPerson;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,8 @@ public class SalesPersonControl extends AbstractControl {
     public SalesPersonControl() {
         super();
     }
-
+    
+  
     public boolean addSalesPerson(SalesPerson SP) {
 
         String query = "INSERT INTO salesperson VALUES(?,?,?,?,?,?)";
@@ -60,6 +63,40 @@ public class SalesPersonControl extends AbstractControl {
         }
         return SP;
     }
+     
+public void S_UpdateMyInfo(SalesPerson sp){
+    
+        System.out.println(sp.getSP_SSN());
+String query = String.format("UPDATE SalesPerson SET SP_FirstName = '%s', SP_LastName = '%s', SP_PhoneNumber = %d, SP_Email = '%s'"
+        + ", YearsOfExperience = %d WHERE SP_SSN = %d",
+        sp.getSP_FirstName(), sp.getSP_LastName(), sp.getSP_PhoneNumber(), sp.getSP_Email(), 
+        sp.getYearsOfExperience(),
+        sp.getSP_SSN());      System.out.println(query);
+        try{
+          
+       Statement stm= con.createStatement();
+         stm.executeUpdate(query);
+         stm.close();
+        }
+        catch (SQLException ex){
+        ex.printStackTrace();
+     }
+    }
+    
+ public void deleteMyAccount(int SP_SSN)
+    {
+        String query="DELETE FROM SalesPerson where SP_SSN="+ SP_SSN;
+        try{
+        Statement stm1= con.createStatement();
+         stm1.executeUpdate(query);
+         stm1.close();
+        }
+        catch (SQLException ex){
+        ex.printStackTrace();
+     }
+    }
+
+
 
     public List<SalesPerson> getAllSalesPeople() {
 

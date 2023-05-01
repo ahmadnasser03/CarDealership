@@ -114,6 +114,11 @@ public class AsSalesPerson extends JFrame{
         DeleteAccount.setBackground(new java.awt.Color(107, 5, 107));
         DeleteAccount.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         DeleteAccount.setText("Delete My Account");
+        DeleteAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAccountActionPerformed(evt);
+            }
+        });
         getContentPane().add(DeleteAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 145, 43));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/car.jpg"))); // NOI18N
@@ -139,12 +144,16 @@ public class AsSalesPerson extends JFrame{
         UpdateMyInfo up= new UpdateMyInfo(SP);
         up.setVisible(true);
     }//GEN-LAST:event_UpdateInfoActionPerformed
-public void S_UpdateMyInfo(java.awt.event.ActionEvent evt){
 
-}
-public void DeleteMyAccount(java.awt.event.ActionEvent evt){
+    private void DeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        DeleteAccount del= new DeleteAccount(SP);
+        del.setVisible(true);
+        
+    }//GEN-LAST:event_DeleteAccountActionPerformed
 
-}
+        
     /**
      * @param args the command line arguments
      */

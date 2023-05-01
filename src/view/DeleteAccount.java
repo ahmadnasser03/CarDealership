@@ -4,18 +4,26 @@
  */
 package view;
 
+import Model.SalesPerson;
+import control.SalesPersonControl;
+import static java.lang.constant.ConstantDescs.NULL;
+
 /**
  *
  * @author user
  */
 public class DeleteAccount extends javax.swing.JFrame {
-
+SalesPersonControl SPCtrl=new SalesPersonControl();
+    SalesPerson sp;
     /**
      * Creates new form DeleteAccount
      */
-    public DeleteAccount() {
+    public DeleteAccount(SalesPerson sp) {
+         this.sp = sp;
         initComponents();
     }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,22 +34,71 @@ public class DeleteAccount extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Yes = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
+        Cancel = new javax.swing.JToggleButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        Yes.setText("Yes");
+        Yes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YesActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Are You Sure You Want To Delete Your Account?");
+
+        Cancel.setText("Cancel");
+        Cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(Yes, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Cancel)
+                .addGap(73, 73, 73))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Yes)
+                    .addComponent(Cancel))
+                .addGap(132, 132, 132))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void YesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YesActionPerformed
+        // TODO add your handling code here:
+        SPCtrl.deleteMyAccount(sp);
+        dispose();
+        Main main=new Main();
+        main.setVisible(true);
+        
+    }//GEN-LAST:event_YesActionPerformed
+
+    private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_CancelActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -72,11 +129,14 @@ public class DeleteAccount extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DeleteAccount().setVisible(true);
+                new DeleteAccount((SalesPerson) NULL).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Cancel;
+    private javax.swing.JToggleButton Yes;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

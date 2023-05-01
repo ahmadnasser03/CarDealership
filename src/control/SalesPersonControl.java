@@ -83,9 +83,9 @@ String query = String.format("UPDATE SalesPerson SET SP_FirstName = '%s', SP_Las
      }
     }
     
- public void deleteMyAccount(int SP_SSN)
+ public void deleteMyAccount(SalesPerson sp)
     {
-        String query="DELETE FROM SalesPerson where SP_SSN="+ SP_SSN;
+        String query="DELETE FROM SalesPerson where SP_SSN="+ sp.getSP_SSN();
         try{
         Statement stm1= con.createStatement();
          stm1.executeUpdate(query);

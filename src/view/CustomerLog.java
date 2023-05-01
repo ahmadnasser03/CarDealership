@@ -55,7 +55,7 @@ public class CustomerLog extends javax.swing.JFrame {
         getContentPane().add(ssn, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 160, -1));
 
         doesNotExist.setForeground(new java.awt.Color(255, 51, 51));
-        getContentPane().add(doesNotExist, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 172, 160, 31));
+        getContentPane().add(doesNotExist, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 180, 31));
 
         log.setBackground(new java.awt.Color(107, 5, 107));
         log.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -79,7 +79,7 @@ public class CustomerLog extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pov-removebg-preview.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, 520, 290));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, 520, 270));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon.jpeg.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 110, 80));

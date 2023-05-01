@@ -75,7 +75,7 @@ public class SalesPersonLog extends javax.swing.JFrame {
         getContentPane().add(ssn, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 192, 160, -1));
 
         doesNotExist.setForeground(new java.awt.Color(255, 51, 51));
-        getContentPane().add(doesNotExist, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 274, 160, 25));
+        getContentPane().add(doesNotExist, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 274, 200, 25));
 
         log.setBackground(new java.awt.Color(107, 5, 107));
         log.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -101,7 +101,7 @@ public class SalesPersonLog extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 49, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pov-removebg-preview.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, 540, 330));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, 540, 340));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -39,7 +39,7 @@ public class SalesPersonControl extends AbstractControl {
             rows = ps.executeUpdate();
             System.out.println(rows + " rows affected.");
         } catch (Exception e) {
-
+            System.out.println(e);
         }
         return rows == 1;
     }
@@ -59,7 +59,7 @@ public class SalesPersonControl extends AbstractControl {
                     rs.getInt("YearsOfExperience"));
             System.out.println("control.SalesPersonControl.getSalesPersonBySSN()");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
         return SP;
     }
@@ -83,9 +83,9 @@ String query = String.format("UPDATE SalesPerson SET SP_FirstName = '%s', SP_Las
      }
     }
     
- public void deleteMyAccount(int SP_SSN)
+ public void deleteMyAccount(SalesPerson sp)
     {
-        String query="DELETE FROM SalesPerson where SP_SSN="+ SP_SSN;
+        String query="DELETE FROM SalesPerson where SP_SSN="+ sp.getSP_SSN();
         try{
         Statement stm1= con.createStatement();
          stm1.executeUpdate(query);

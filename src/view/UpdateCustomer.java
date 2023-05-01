@@ -182,6 +182,8 @@ public class UpdateCustomer extends javax.swing.JFrame {
         this.c.setC_Email(email.getText());
         this.setVisible(false);
         CCtrl.C_UpdateMyInfo(c);
+        ChangesSaved CS = new ChangesSaved(c);
+        CS.setVisible(true);
     }//GEN-LAST:event_submitActionPerformed
 
     private void FirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameActionPerformed

@@ -4,6 +4,7 @@
  */
 package view;
 
+import Model.Customers;
 import Model.SalesPerson;
 
 /**
@@ -12,13 +13,13 @@ import Model.SalesPerson;
  */
 public class ChangesSaved extends javax.swing.JFrame {
 
-    SalesPerson SP;
+    Object O;
     /**
      * Creates new form ChangesSaved
      */
-    public ChangesSaved(SalesPerson SP) {
+    public ChangesSaved(Object O) {
         initComponents();
-        this.SP = SP;
+        this.O = O;
     }
 
     /**
@@ -78,8 +79,14 @@ public class ChangesSaved extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AsSalesPerson ASP = new AsSalesPerson(SP);
-        ASP.setVisible(true);
+        if (O instanceof SalesPerson){
+            AsSalesPerson ASP = new AsSalesPerson((SalesPerson) O);
+            ASP.setVisible(true);
+        }
+        else if (O instanceof Customers){
+            AsCustomer AC = new AsCustomer((Customers) O);
+            AC.setVisible(true);
+        }
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

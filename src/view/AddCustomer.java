@@ -126,7 +126,7 @@ public class AddCustomer extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 303, 28, -1));
 
         alreadyExists.setForeground(new java.awt.Color(255, 51, 51));
-        getContentPane().add(alreadyExists, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 260, 138, 23));
+        getContentPane().add(alreadyExists, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 260, 190, 23));
 
         back.setBackground(new java.awt.Color(107, 5, 107));
         back.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -146,15 +146,19 @@ public class AddCustomer extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
 
-        if (customerCtrl.addCustomer(new Customers(Integer.parseInt(this.ssn.getText()),
+        int status = customerCtrl.addCustomer(new Customers(Integer.parseInt(this.ssn.getText()),
                 this.firstName.getText(),
                 this.lastName.getText(),
                 Integer.parseInt(this.phoneNumber.getText()),
-                this.email.getText()))) {
+                this.email.getText()));
+        if (status == 0) {
             this.setVisible(false);
-        } else {
+        } else if (status == 2) {
             this.alreadyExists.setText("User Already Exists.");
-        }
+        } else if (status == 1) {
+            this.alreadyExists.setText("Wrong email format.");
+        } else
+            this.alreadyExists.setText("Error connecting to database.");
 
 
     }//GEN-LAST:event_submitButtonActionPerformed
@@ -176,7 +180,7 @@ public class AddCustomer extends javax.swing.JFrame {
         this.submitButton.setEnabled(!anyEmpty());    }//GEN-LAST:event_emailKeyTyped
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-             dispose();
+        dispose();
         Main main = new Main();
         main.setVisible(true);
     }//GEN-LAST:event_backActionPerformed

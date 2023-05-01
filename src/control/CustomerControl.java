@@ -19,9 +19,12 @@ public class CustomerControl extends AbstractControl {
         super();
     }
 
-    public boolean addCustomer(Customers customer) {
+    public int addCustomer(Customers customer) {
         String query = "INSERT INTO customers VALUES(?,?,?,?,?)";
-        int rows = 0;
+        int status = -1;
+        if (con == null) {
+            return status;
+        }
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, customer.getC_SSN());
@@ -30,18 +33,26 @@ public class CustomerControl extends AbstractControl {
             ps.setInt(3, customer.getC_PhoneNumber());
             ps.setString(2, customer.getC_Email());
 
-            rows = ps.executeUpdate();
+            int rows = ps.executeUpdate();
 
+            status = rows == 1 ? 0 : -1;
             System.out.println(rows + " rows affected");
-        } catch (Exception e) {
-
+        } catch (Exception ee) {
+            System.out.println(ee.getMessage());
+            if (ee.getMessage().equals("CONSTRAINT `email_format` failed for `cardealership`.`customers`")) {
+                status = 1;
+            } else {
+                status = 2;
+            }
         }
-        return rows == 1;
+        return status;
     }
 
-    public Customers getCustomerBySSN(int ssn) {
+    public Customers getCustomerBySSN(int ssn) throws NullPointerException {
 
         Customers customer = null;
+        if (con == null)
+            throw new NullPointerException();
         String query = String.format("SELECT * FROM customers WHERE C_SSN = %d", ssn);
         try {
             ResultSet rs = con.createStatement().executeQuery(query);
@@ -76,33 +87,35 @@ public class CustomerControl extends AbstractControl {
         }
         return customers;
     }
-     public void C_UpdateMyInfo(Customers C){
-    
+
+    public int C_UpdateMyInfo(Customers C) {
+
         System.out.println(C.getC_SSN());
-String query = String.format("UPDATE Customers SET C_FirstName = '%s', C_LastName = '%s', C_PhoneNumber = %d, C_Email = '%s'"
-        + " WHERE C_SSN = %d",
-        C.getC_FirstName(), C.getC_LastName(), C.getC_PhoneNumber(), C.getC_Email(), 
-        C.getC_SSN());      System.out.println(query);
-        try{
-       Statement stm= con.createStatement();
-         stm.executeUpdate(query);
-         stm.close();
+        String query = String.format("UPDATE Customers SET C_FirstName = '%s', C_LastName = '%s', C_PhoneNumber = %d, C_Email = '%s'"
+                + " WHERE C_SSN = %d",
+                C.getC_FirstName(), C.getC_LastName(), C.getC_PhoneNumber(), C.getC_Email(),
+                C.getC_SSN());
+        System.out.println(query);
+        try {
+            Statement stm = con.createStatement();
+            stm.executeUpdate(query);
+            stm.close();
+            return 0;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return 1;
         }
-        catch (SQLException ex){
-        ex.printStackTrace();
-     }
     }
-      public void deleteCustomer(Customers C)
-    {
-        String query="DELETE FROM Customers where C_ssn="+ C.getC_SSN();
-        try{
-       Statement stm= con.createStatement();
-         stm.executeUpdate(query);
-         stm.close();
+
+    public void deleteCustomer(Customers C) {
+        String query = "DELETE FROM Customers where C_ssn=" + C.getC_SSN();
+        try {
+            Statement stm = con.createStatement();
+            stm.executeUpdate(query);
+            stm.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
-        catch (SQLException ex){
-        ex.printStackTrace();
-     }
     }
-    
+
 }

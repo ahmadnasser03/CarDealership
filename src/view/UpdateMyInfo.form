@@ -47,9 +47,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                               <Component id="PhoneNumber" alignment="0" pref="180" max="32767" attributes="0"/>
-                              <Component id="phoneNumber" pref="180" max="32767" attributes="0"/>
-                              <Component id="lastName" alignment="1" max="32767" attributes="0"/>
                               <Component id="LastName" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
+                              <Component id="lastName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="phoneNumber" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="Submit" min="-2" pref="107" max="-2" attributes="0"/>
@@ -61,7 +61,7 @@
               </Group>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="187" max="32767" attributes="0"/>
+              <EmptySpace pref="209" max="32767" attributes="0"/>
               <Component id="jLabel6" min="-2" pref="148" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
           </Group>

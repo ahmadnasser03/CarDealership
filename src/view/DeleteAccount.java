@@ -6,7 +6,6 @@ package view;
 
 import Model.SalesPerson;
 import control.SalesPersonControl;
-import static java.lang.constant.ConstantDescs.NULL;
 
 /**
  *
@@ -138,7 +137,7 @@ SalesPersonControl SPCtrl=new SalesPersonControl();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DeleteAccount((SalesPerson) NULL).setVisible(true);
+                new DeleteAccount(null).setVisible(true);
             }
         });
     }

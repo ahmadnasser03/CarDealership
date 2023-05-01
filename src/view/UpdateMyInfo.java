@@ -56,6 +56,7 @@ SalesPerson sp;
         Submit = new javax.swing.JButton();
         Back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        wrong = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,7 +89,7 @@ SalesPerson sp;
                 yearOfExpActionPerformed(evt);
             }
         });
-        getContentPane().add(yearOfExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 237, 180, -1));
+        getContentPane().add(yearOfExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 180, -1));
 
         LastName.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         LastName.setText("Last Name:");
@@ -129,7 +130,10 @@ SalesPerson sp;
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 302, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pov-removebg-preview.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 10, 580, 370));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 10, 650, 330));
+
+        wrong.setForeground(new java.awt.Color(255, 0, 51));
+        getContentPane().add(wrong, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 200, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -149,10 +153,17 @@ SalesPerson sp;
                 this.sp.setSP_PhoneNumber(Integer.parseInt(this.phoneNumber.getText()));
                 this.sp.setSP_Email(email.getText());
                 this.sp.setYearsOfExperience(Integer.parseInt(this.yearOfExp.getText()));
-                this.setVisible(false);
-                SPCtrl.S_UpdateMyInfo(sp);
-                ChangesSaved CS = new ChangesSaved(sp);
-                CS.setVisible(true);
+                
+                int status = SPCtrl.S_UpdateMyInfo(sp);
+                if (status == 0){
+                    this.setVisible(false);
+                    ChangesSaved CS = new ChangesSaved(sp);
+                    CS.setVisible(true);
+                }
+                else {
+                    System.out.println(status);
+                    this.wrong.setText("Wrong email format.");
+                }
        
     }//GEN-LAST:event_SubmitActionPerformed
 
@@ -216,6 +227,7 @@ SalesPerson sp;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField lastName;
     private javax.swing.JTextField phoneNumber;
+    private javax.swing.JLabel wrong;
     private javax.swing.JTextField yearOfExp;
     // End of variables declaration//GEN-END:variables
 }

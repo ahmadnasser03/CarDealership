@@ -20,13 +20,15 @@ public class SalesPersonControl extends AbstractControl {
     public SalesPersonControl() {
         super();
     }
-    
-  
-    public boolean addSalesPerson(SalesPerson SP) {
+
+    public int addSalesPerson(SalesPerson SP) {
 
         String query = "INSERT INTO salesperson VALUES(?,?,?,?,?,?)";
 
-        int rows = 0;
+        int status = -1;
+        if (con == null) {
+            return status;
+        }
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, SP.getSP_SSN());
@@ -36,17 +38,26 @@ public class SalesPersonControl extends AbstractControl {
             ps.setString(5, SP.getSP_Email());
             ps.setInt(6, SP.getYearsOfExperience());
 
-            rows = ps.executeUpdate();
-            System.out.println(rows + " rows affected.");
+            int rows = ps.executeUpdate();
+            status = rows == 1 ? 0 : -1;
         } catch (Exception e) {
-            System.out.println(e);
+            if (e.getMessage().equals("CONSTRAINT `ck_salesperson_email_format` failed for `cardealership`.`salesperson`")) {
+                status = 1;
+            } else {
+                status = 2;
+            }
+
         }
-        return rows == 1;
+        return status;
     }
 
-    public SalesPerson getSalesPersonBySSN(int ssn) {
+    public SalesPerson getSalesPersonBySSN(int ssn) throws NullPointerException {
 
         SalesPerson SP = null;
+        if (con == null) {
+            throw new NullPointerException();
+        }
+
         String query = String.format("SELECT * FROM salesperson WHERE SP_SSN = %d", ssn);
         try {
             ResultSet rs = con.createStatement().executeQuery(query);
@@ -63,40 +74,36 @@ public class SalesPersonControl extends AbstractControl {
         }
         return SP;
     }
-     
-public void S_UpdateMyInfo(SalesPerson sp){
-    
+
+    public int S_UpdateMyInfo(SalesPerson sp) {
+
         System.out.println(sp.getSP_SSN());
-String query = String.format("UPDATE SalesPerson SET SP_FirstName = '%s', SP_LastName = '%s', SP_PhoneNumber = %d, SP_Email = '%s'"
-        + ", YearsOfExperience = %d WHERE SP_SSN = %d",
-        sp.getSP_FirstName(), sp.getSP_LastName(), sp.getSP_PhoneNumber(), sp.getSP_Email(), 
-        sp.getYearsOfExperience(),
-        sp.getSP_SSN());      System.out.println(query);
-        try{
-          
-       Statement stm= con.createStatement();
-         stm.executeUpdate(query);
-         stm.close();
+        String query = String.format("UPDATE SalesPerson SET SP_FirstName = '%s', SP_LastName = '%s', SP_PhoneNumber = %d, SP_Email = '%s'"
+                + ", YearsOfExperience = %d WHERE SP_SSN = %d",
+                sp.getSP_FirstName(), sp.getSP_LastName(), sp.getSP_PhoneNumber(), sp.getSP_Email(),
+                sp.getYearsOfExperience(),
+                sp.getSP_SSN());
+        try {
+
+            Statement stm = con.createStatement();
+            int rows = stm.executeUpdate(query);
+            stm.close();
+        } catch (SQLException ex) {
+            return 1;
         }
-        catch (SQLException ex){
-        ex.printStackTrace();
-     }
-    }
-    
- public void deleteMyAccount(SalesPerson sp)
-    {
-        String query="DELETE FROM SalesPerson where SP_SSN="+ sp.getSP_SSN();
-        try{
-        Statement stm1= con.createStatement();
-         stm1.executeUpdate(query);
-         stm1.close();
-        }
-        catch (SQLException ex){
-        ex.printStackTrace();
-     }
+        return 0;
     }
 
-
+    public void deleteMyAccount(SalesPerson sp) {
+        String query = "DELETE FROM SalesPerson where SP_SSN=" + sp.getSP_SSN();
+        try {
+            Statement stm1 = con.createStatement();
+            stm1.executeUpdate(query);
+            stm1.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
 
     public List<SalesPerson> getAllSalesPeople() {
 

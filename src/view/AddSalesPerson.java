@@ -80,7 +80,7 @@ public class AddSalesPerson extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 259, -1, -1));
 
         alreadyExists.setForeground(new java.awt.Color(255, 51, 51));
-        getContentPane().add(alreadyExists, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 341, 173, 36));
+        getContentPane().add(alreadyExists, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 210, 36));
 
         submitButton.setBackground(new java.awt.Color(107, 5, 107));
         submitButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -120,15 +120,20 @@ public class AddSalesPerson extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
 
-        if (SPCtrl.addSalesPerson(new SalesPerson(Integer.parseInt(this.ssn.getText()),
+        int status = SPCtrl.addSalesPerson(new SalesPerson(Integer.parseInt(this.ssn.getText()),
                 this.firstName.getText(),
                 this.lastName.getText(),
                 Integer.parseInt(this.phoneNumber.getText()),
                 this.email.getText(),
-                Integer.parseInt(this.yearsOfExp.getText()))))
+                Integer.parseInt(this.yearsOfExp.getText())));
+        if (status == 0)
             this.setVisible(false);
-        else
+        else if (status == 2)
             this.alreadyExists.setText("Sales person already exists.");
+        else if (status == 1)
+            this.alreadyExists.setText("Wrong email format.");
+        else
+            this.alreadyExists.setText("Error connecting to database.");
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed

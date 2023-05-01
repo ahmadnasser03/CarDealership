@@ -116,20 +116,25 @@ public class SalesPersonLog extends javax.swing.JFrame {
 
     private void logActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logActionPerformed
         if (!this.ssn.getText().isEmpty()) {
-            if ((SP = SPC.getSalesPersonBySSN(Integer.parseInt(this.ssn.getText()))) != null) {
-                AsSalesPerson SPV = new AsSalesPerson(SP);
-                System.out.println(SP);
-                SPV.setVisible(true);
-                this.setVisible(false);
-            } else {
-                
-                this.doesNotExist.setText("Sales person does not exist.");
+            try {
+                if ((SP = SPC.getSalesPersonBySSN(Integer.parseInt(this.ssn.getText()))) != null) {
+                    AsSalesPerson SPV = new AsSalesPerson(SP);
+                    System.out.println(SP);
+                    SPV.setVisible(true);
+                    this.setVisible(false);
+                } else {
+
+                    this.doesNotExist.setText("Sales person does not exist.");
+                }
+            } catch(NullPointerException e){
+                this.doesNotExist.setText("Error connecting to database.");
             }
         }
+
     }//GEN-LAST:event_logActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-       dispose();
+        dispose();
         Main main = new Main();
         main.setVisible(true);
     }//GEN-LAST:event_backActionPerformed

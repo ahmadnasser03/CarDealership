@@ -12,22 +12,24 @@ import control.CustomerControl;
  * @author tala
  */
 public class UpdateCustomer extends javax.swing.JFrame {
- CustomerControl CCtrl=new CustomerControl();
- Customers c;
+
+    CustomerControl CCtrl = new CustomerControl();
+    Customers c;
+
     /**
      * Creates new form UpdateMyInfo
      */
     public UpdateCustomer(Customers c) {
-       
-        this.c=c;
+        
+        this.c = c;
         initComponents();
         this.FirstName.setText(c.getC_FirstName());
         this.Lastname.setText(c.getC_LastName());
-        this.Phonenumber.setText(""+c.getC_PhoneNumber());
+        this.Phonenumber.setText("" + c.getC_PhoneNumber());
         this.email.setText(c.getC_Email());
-      
+        
     }
-
+    
     private UpdateCustomer() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -53,6 +55,7 @@ public class UpdateCustomer extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        wrong = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -121,7 +124,10 @@ public class UpdateCustomer extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pov-removebg-preview.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, 570, 360));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, 560, 310));
+
+        wrong.setForeground(new java.awt.Color(255, 0, 51));
+        getContentPane().add(wrong, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 140, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,7 +137,7 @@ public class UpdateCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_LastnameActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
-         dispose();
+        dispose();
         Main main = new Main();
         main.setVisible(true);
     }//GEN-LAST:event_BackActionPerformed
@@ -141,10 +147,13 @@ public class UpdateCustomer extends javax.swing.JFrame {
         this.c.setC_LastName(Lastname.getText());
         this.c.setC_PhoneNumber(Integer.parseInt(this.Phonenumber.getText()));
         this.c.setC_Email(email.getText());
-        this.setVisible(false);
-        CCtrl.C_UpdateMyInfo(c);
-        ChangesSaved CS = new ChangesSaved(c);
-        CS.setVisible(true);
+        int status = CCtrl.C_UpdateMyInfo(c);
+        if (status == 0) {
+            ChangesSaved CS = new ChangesSaved(c);
+            CS.setVisible(true);
+            this.setVisible(false);
+        } else
+            this.wrong.setText("Wrong email format.");
     }//GEN-LAST:event_submitActionPerformed
 
     private void FirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstNameActionPerformed
@@ -204,5 +213,6 @@ public class UpdateCustomer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton submit;
+    private javax.swing.JLabel wrong;
     // End of variables declaration//GEN-END:variables
 }

@@ -86,12 +86,13 @@ public class BrowseSalesPerson extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
         if (table.getColumnModel().getColumnCount() > 0) {
+            table.getColumnModel().getColumn(0).setMinWidth(85);
             table.getColumnModel().getColumn(0).setPreferredWidth(40);
-            table.getColumnModel().getColumn(0).setMaxWidth(75);
-            table.getColumnModel().getColumn(1).setMinWidth(160);
-            table.getColumnModel().getColumn(1).setMaxWidth(260);
-            table.getColumnModel().getColumn(2).setMinWidth(160);
-            table.getColumnModel().getColumn(2).setMaxWidth(200);
+            table.getColumnModel().getColumn(0).setMaxWidth(85);
+            table.getColumnModel().getColumn(1).setMinWidth(120);
+            table.getColumnModel().getColumn(1).setMaxWidth(120);
+            table.getColumnModel().getColumn(2).setMinWidth(120);
+            table.getColumnModel().getColumn(2).setMaxWidth(120);
             table.getColumnModel().getColumn(3).setMinWidth(100);
             table.getColumnModel().getColumn(3).setMaxWidth(100);
             table.getColumnModel().getColumn(4).setPreferredWidth(125);

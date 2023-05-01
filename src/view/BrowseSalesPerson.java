@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import Model.Customers;
 import Model.SalesPerson;
+import java.awt.Color;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,9 +27,30 @@ public class BrowseSalesPerson extends javax.swing.JFrame {
          initComponents();
         this.salespeople = salespeople;
         for (SalesPerson SP : salespeople) {
-            Object[] row = {SP.getSP_SSN(),SP.getSP_FirstName(), SP.getSP_LastName(), SP.getSP_PhoneNumber(), SP.getSP_Email(), SP.getYearsOfExperience()};
-            ((DefaultTableModel) this.jTable1.getModel()).addRow(row);
+            Object[] row = {SP.getSP_SSN(),SP.getSP_FirstName(), SP.getSP_LastName(), SP.getSP_PhoneNumber(), SP.getSP_Email(), SP.getYearsOfExperience() + " years"};
+            ((DefaultTableModel) this.table.getModel()).addRow(row);
         }
+        
+        String placeholder = "Search by name";
+        search.setForeground(Color.GRAY);
+        search.setText(placeholder);
+        search.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (search.getText().equals(placeholder)) {
+                    search.setText("");
+                    search.setForeground(Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if (search.getText().isEmpty()) {
+                    search.setForeground(Color.GRAY);
+                    search.setText(placeholder);
+                }
+            }
+        });
     }
 
     /**
@@ -39,7 +64,9 @@ public class BrowseSalesPerson extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table = new javax.swing.JTable();
+        search = new javax.swing.JTextField();
+        searchButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -47,9 +74,9 @@ public class BrowseSalesPerson extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(107, 5, 107));
         jLabel1.setText("Sales People");
 
-        jTable1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(107, 5, 107));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        table.setForeground(new java.awt.Color(107, 5, 107));
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -57,34 +84,84 @@ public class BrowseSalesPerson extends javax.swing.JFrame {
                 "SSN", "First Name", "Last Name", "Phone Number", "Email", "Experience"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(table);
+        if (table.getColumnModel().getColumnCount() > 0) {
+            table.getColumnModel().getColumn(0).setPreferredWidth(40);
+            table.getColumnModel().getColumn(0).setMaxWidth(75);
+            table.getColumnModel().getColumn(1).setMinWidth(160);
+            table.getColumnModel().getColumn(1).setMaxWidth(260);
+            table.getColumnModel().getColumn(2).setMinWidth(160);
+            table.getColumnModel().getColumn(2).setMaxWidth(200);
+            table.getColumnModel().getColumn(3).setMinWidth(100);
+            table.getColumnModel().getColumn(3).setMaxWidth(100);
+            table.getColumnModel().getColumn(4).setPreferredWidth(125);
+            table.getColumnModel().getColumn(5).setMinWidth(100);
+            table.getColumnModel().getColumn(5).setPreferredWidth(12);
+            table.getColumnModel().getColumn(5).setMaxWidth(100);
+        }
+
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+
+        searchButton.setText("Search");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(259, 259, 259))))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(51, 51, 51)
+                .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(searchButton)
+                .addGap(52, 52, 52))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+       for (int i = table.getRowCount() - 1; i >= 0; i--) {
+            ((DefaultTableModel) table.getModel()).removeRow(i);
+        }
+        
+        for (SalesPerson sp : salespeople){
+            if (sp.getSP_FirstName().toLowerCase().contains(this.search.getText().toLowerCase()) || this.search.getText().equals("Search by name")) {
+                Object[] row = {sp.getSP_SSN(), sp.getSP_FirstName(), sp.getSP_LastName(),  sp.getSP_PhoneNumber(), sp.getSP_Email(), sp.getYearsOfExperience() + " years"};
+                ((DefaultTableModel) this.table.getModel()).addRow(row);
+            }
+        }
+    }//GEN-LAST:event_searchButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,6 +201,8 @@ public class BrowseSalesPerson extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField search;
+    private javax.swing.JButton searchButton;
+    private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }

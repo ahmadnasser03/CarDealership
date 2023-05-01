@@ -43,7 +43,7 @@ public class AsCustomer extends javax.swing.JFrame {
         DeleteAccount = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         message.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -131,6 +131,7 @@ public class AsCustomer extends javax.swing.JFrame {
     private void DeleteAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccountActionPerformed
         CDeleteMyAccount del= new CDeleteMyAccount(customer);
         del.setVisible(true);
+        dispose();
     }//GEN-LAST:event_DeleteAccountActionPerformed
 
     /**

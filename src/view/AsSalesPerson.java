@@ -75,7 +75,7 @@ public class AsSalesPerson extends JFrame{
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         message.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N

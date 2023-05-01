@@ -89,6 +89,8 @@ CustomerControl CCtrl=new CustomerControl();
     private void YesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YesActionPerformed
         CCtrl.deleteCustomer(c);
         dispose();
+         Main main=new Main();
+        main.setVisible(true);
     }//GEN-LAST:event_YesActionPerformed
 
     private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed

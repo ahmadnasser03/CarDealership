@@ -97,7 +97,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("SansSerif", 3, 24)); // NOI18N
         jLabel3.setText("Driving innovation,");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 230, 40));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 260, 40));
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 3, 24)); // NOI18N
         jLabel5.setText("one sale at a time ");

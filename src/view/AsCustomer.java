@@ -47,7 +47,7 @@ public class AsCustomer extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         message.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 29, 158, 41));
+        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 29, 190, 41));
 
         BrowseC.setBackground(new java.awt.Color(107, 5, 107));
         BrowseC.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N

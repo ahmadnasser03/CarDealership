@@ -75,11 +75,11 @@ public class AsSalesPerson extends JFrame{
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         message.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 176, 22));
+        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 32, 220, 30));
 
         browseCustomers.setBackground(new java.awt.Color(107, 5, 107));
         browseCustomers.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N

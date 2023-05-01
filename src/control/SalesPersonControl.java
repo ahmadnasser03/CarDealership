@@ -39,7 +39,7 @@ public class SalesPersonControl extends AbstractControl {
             rows = ps.executeUpdate();
             System.out.println(rows + " rows affected.");
         } catch (Exception e) {
-
+            System.out.println(e);
         }
         return rows == 1;
     }
@@ -59,7 +59,7 @@ public class SalesPersonControl extends AbstractControl {
                     rs.getInt("YearsOfExperience"));
             System.out.println("control.SalesPersonControl.getSalesPersonBySSN()");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
         return SP;
     }
